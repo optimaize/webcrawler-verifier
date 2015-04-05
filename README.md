@@ -6,7 +6,11 @@ eg that Googlebot is actually coming from Google and not from some spoofer.
 
 ## Maven
 
-The library will be published to Maven Central shortly.
+    <dependency>
+        <groupId>com.optimaize.webcrawlerverifier</groupId>
+        <artifactId>webcrawlerverifier</artifactId>
+        <version>0.1</version>
+    </dependency>
 
 
 ## How to use
