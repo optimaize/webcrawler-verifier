@@ -140,7 +140,7 @@ For such kind of information take a look at http://uadetector.sourceforge.net/
 
 ## Terminology
 
-- Crawler, web crawler, bot and robot are used as synonyms.
+- Crawler, web crawler, spider, web spider, bot and robot are used as synonyms.
 
 
 ## Resources
