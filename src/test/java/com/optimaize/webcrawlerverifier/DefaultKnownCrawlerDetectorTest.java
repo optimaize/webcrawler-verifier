@@ -76,6 +76,9 @@ public class DefaultKnownCrawlerDetectorTest {
         assertEquals(detector.detect("Baiduspider+(+http://www.baidu.com/search/spider.htm)", "123.125.66.120").get(), r);
         assertEquals(detector.detect("Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)", "123.125.66.120").get(), r);
 
+        //see https://github.com/optimaize/webcrawler-verifier/issues/4 this fails, open task.
+//        assertEquals(detector.detect("Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)", "180.76.15.14").get(), r);
+
         //failing by ip:
         r = new KnownCrawlerResult("BAIDUSPIDER", KnownCrawlerResultStatus.IMPERSONATOR);
         assertEquals(detector.detect("Baiduspider+(+http://www.baidu.com/search/spider.htm)", "55.55.55.55").get(), r);
@@ -125,9 +128,8 @@ public class DefaultKnownCrawlerDetectorTest {
 
         KnownCrawlerResult r;
 
-        //i have no current ip from them... can't test. the ones published on various sites are outdated.
-        //r = new KnownCrawlerResult("YAHOOSLURP", KnownCrawlerResultStatus.VERIFIED);
-        //assertEquals(detector.detect("Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)", "put ip here").get(), r);
+        r = new KnownCrawlerResult("YAHOOSLURP", KnownCrawlerResultStatus.VERIFIED);
+        assertEquals(detector.detect("Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)", "68.180.228.178").get(), r);
 
         //failing by ip:
         r = new KnownCrawlerResult("YAHOOSLURP", KnownCrawlerResultStatus.IMPERSONATOR);
