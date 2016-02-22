@@ -14,6 +14,8 @@ import java.util.Set;
  * They also encourage the reverse and forward DNS lookup verification.
  * Ending with search.msn.com
  *
+ * This detects the Bingbot, plus the former msnbot.
+ *
  */
 public class BingbotData implements CrawlerData {
 
@@ -25,7 +27,7 @@ public class BingbotData implements CrawlerData {
 
             //see http://en.wikipedia.org/wiki/Msnbot
             //this was the previous bot.
-            //"As of March 2014 msnbot was still active ... (but that it would retire soon)"
+            //"As of February 2016 msnbot is still active ... (it was announced to retire "soon" quote some time ago...)"
             if (userAgent.contains("msnbot")) return true;
 
             return false;
