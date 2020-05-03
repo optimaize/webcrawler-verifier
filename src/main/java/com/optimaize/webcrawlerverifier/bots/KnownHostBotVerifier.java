@@ -35,6 +35,6 @@ public interface KnownHostBotVerifier {
      * @return
      */
     @NotNull
-    BotCheckerResult check(@NotNull String userAgent, @NotNull String ip);
+    BotCheckerResult check(String userAgent, @NotNull String ip);
 
 }
