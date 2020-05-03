@@ -22,7 +22,7 @@ public class DefaultKnownCrawlerDetector implements KnownCrawlerDetector {
 
     @NotNull
     @Override
-    public Optional<KnownCrawlerResult> detect(@NotNull String userAgent, @NotNull String ip) {
+    public Optional<KnownCrawlerResult> detect(String userAgent, @NotNull String ip) {
         for (KnownHostBotVerifier verifier : verifiers) {
             BotCheckerResult check = verifier.check(userAgent, ip);
             if (check != BotCheckerResult.IS_NOT) {

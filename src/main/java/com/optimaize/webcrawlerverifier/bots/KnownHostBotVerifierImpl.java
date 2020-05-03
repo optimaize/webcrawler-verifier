@@ -8,6 +8,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.Set;
 
+import static com.google.common.base.Strings.isNullOrEmpty;
+
 /**
  *
  */
@@ -38,8 +40,8 @@ class KnownHostBotVerifierImpl implements KnownHostBotVerifier {
 
     @Override
     @NotNull
-    public BotCheckerResult check(@NotNull String userAgent, @NotNull String ip) {
-        if (!crawlerData.getUserAgentChecker().apply(userAgent)) {
+    public BotCheckerResult check(String userAgent, @NotNull String ip) {
+        if (isNullOrEmpty(userAgent) || !crawlerData.getUserAgentChecker().apply(userAgent)) {
             return BotCheckerResult.IS_NOT;
         } else {
             Set<String> permittedIps = crawlerData.getIps();

@@ -14,6 +14,6 @@ public interface KnownCrawlerDetector {
      * @return absent if none detected.
      */
     @NotNull
-    Optional<KnownCrawlerResult> detect(@NotNull String userAgent, @NotNull String ip);
+    Optional<KnownCrawlerResult> detect(String userAgent, @NotNull String ip);
 
 }

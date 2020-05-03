@@ -20,6 +20,7 @@ public class DefaultKnownCrawlerDetectorTest {
     public void none() throws Exception {
         DefaultKnownCrawlerDetector detector = all();
         assertFalse(detector.detect("", "127.0.0.1").isPresent());
+        assertFalse(detector.detect(null, "127.0.0.1").isPresent());
     }
 
     /**
